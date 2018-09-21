@@ -28,8 +28,7 @@ public class Product_Controller {
         return true;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(name = "all/products", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
     public List<Product> allProduct() {
         List<Product> list = new ArrayList<>();
