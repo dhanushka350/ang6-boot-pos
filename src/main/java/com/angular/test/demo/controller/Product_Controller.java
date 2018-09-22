@@ -16,9 +16,10 @@ public class Product_Controller {
     @Autowired
     private Product_Repository productRepository;
 
-    @RequestMapping(name = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
     public boolean saveProduct(@RequestBody Product productDto) {
+        System.out.println("ok");
         Product_Model model = new Product_Model();
         model.setId(productDto.getId());
         model.setName(productDto.getName());
