@@ -16,7 +16,7 @@ public class Product_Controller {
     @Autowired
     private Product_Repository productRepository;
 
-    @RequestMapping(name = "save", method = RequestMethod.POST)
+    @RequestMapping(name = "/save", method = RequestMethod.POST)
     @ResponseBody
     public boolean saveProduct(@RequestBody Product productDto) {
         Product_Model model = new Product_Model();
@@ -34,6 +34,7 @@ public class Product_Controller {
         List<Product> list = new ArrayList<>();
         Product product = null;
         for (Product_Model model : productRepository.findAll()) {
+            product = new Product();
             product.setId(model.getId());
             product.setName(model.getName());
             product.setQty(model.getQty());
